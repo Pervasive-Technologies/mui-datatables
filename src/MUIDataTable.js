@@ -476,8 +476,10 @@ class MUIDataTable extends React.Component {
       }
 
       if (this.options.sortFilterList) {
-        const comparator = getCollatorComparator();
-        filterData[colIndex].sort(comparator);
+        if (colIndex !== 2){
+          const comparator = getCollatorComparator();
+          filterData[colIndex].sort(comparator);
+        }
       }
 
       if (column.sortDirection !== null) {
